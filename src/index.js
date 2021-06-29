@@ -1,14 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './assets/main.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./assets/main.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { NotificationsProvider } from "@mantine/notifications";
+import { MantineProvider } from "@mantine/core";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <MantineProvider>
+      <NotificationsProvider position="top-right" zIndex={2077}>
+        <App />
+      </NotificationsProvider>
+    </MantineProvider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
